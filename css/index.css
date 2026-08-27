@@ -51,7 +51,8 @@ h1 {
     gap: 20px;
     list-style: none;
     padding: 0;
-}#Skills ul {
+}
+#Skills ul {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -61,4 +62,22 @@ h1 {
 
 #Skills li {
     padding: 10px;
+}
+#LeaveMessage form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 500px;
+}
+
+#LeaveMessage input,
+#LeaveMessage textarea {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#LeaveMessage button {
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
 }
