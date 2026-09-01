@@ -51,4 +51,14 @@ h1 {
     gap: 20px;
     list-style: none;
     padding: 0;
+}#Skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+#Skills li {
+    padding: 10px;
 }
