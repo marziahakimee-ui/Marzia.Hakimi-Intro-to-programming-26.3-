@@ -31,24 +31,28 @@ for (let i = 0; i < skills.length; i++) {
   skill.innerText = skills[i];
   skillsList.appendChild(skill);
 }
+const messageForm = document.querySelector('[name="leave_message"]');
+messageForm.addEventListener("submit", function(event) {
 
-fetch("https://api.github.com/users/marziahakimee-ui/repos")
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    let repositories = data;
-    console.log(repositories);
+event.preventDefault();
+const usersName = event.target.usersName.value;
+const usersEmail = event.target.usersEmail.value;
+const usersMessage = event.target.usersMessage.value;
+console.log(usersName, usersEmail, usersMessage);
+const messageSection = document.getElementById("messages");
 
-    let projectSection = document.getElementById("Projects");
-    let projectList = projectSection.querySelector("ul");
+const messageList = messageSection.querySelector("ul");
 
-    for (let i = 0; i < repositories.length; i++) {
-      let project = document.createElement("li");
-      project.innerText = repositories[i].name;
-      projectList.appendChild(project);
-    }
-  })
-  .catch(function (error) {
-    console.log("Error fetching repositories:", error);
-  });
+const newMessage = document.createElement("li");
+newMessage.innerHTML = `<a href="mailto:${usersEmail}">${usersName}</a> <span>${usersMessage}</span>`;
+const removeButton = document.createElement("button");
+removeButton.innerText = "remove";
+removeButton.type = "button";
+removeButton.addEventListener("click", function(event) {
+    const entry = event.target.parentNode;
+    entry.remove();
+});
+newMessage.appendChild(removeButton);
+messageList.appendChild(newMessage);
+event.target.reset();
+});
