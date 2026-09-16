@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Open API</title>
+    <link rel="stylesheet" href="css/openapi.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="openapi.html">Weather</a>
+    </nav>
+
+    <main>
+        <h1>Weather Search</h1>
+        <p>Search for a city to see its current weather.</p>
+
+        <form id="weather-form">
+            <label for="city">Enter a city:</label>
+            <input type="text" id="city" placeholder="Example: Los Angeles" required>
+            <button type="submit">Search Weather</button>
+        </form>
+
+        <section id="weather-results">
+            <h2>Weather Results</h2>
+            <p id="location">Location: </p>
+            <p id="temperature">Temperature: </p>
+            <p id="condition">Weather condition: </p>
+        </section>
+    </main>
+
+    <script src="js/openapi.js"></script>
+</body>
+</html>
